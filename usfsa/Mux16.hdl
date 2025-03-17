@@ -1,0 +1,81 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Mux16.hdl
+/**
+ * 16-bit multiplexor: 
+ * for i = 0, ..., 15:
+ * if (sel = 0) out[i] = a[i], else out[i] = b[i]
+ */
+CHIP Mux16 {
+    IN a[16], b[16], sel;
+    OUT out[16];
+
+    PARTS:
+    //// Replace this comment with your code.
+Nand(a=sel, b=sel, out=nsel);
+
+Nand(a=a[0], b=nsel, out=pp0);
+Nand(a=b[0], b=sel, out=pd0);
+Nand(a=pp0, b=pd0, out=out[0]);
+ 
+Nand(a=a[1], b=nsel, out=pp1);
+Nand(a=b[1], b=sel, out=pd1);
+Nand(a=pp1, b=pd1, out=out[1]);
+ 
+Nand(a=a[2], b=nsel, out=pp2);
+Nand(a=b[2], b=sel, out=pd2);
+Nand(a=pp2, b=pd2, out=out[2]);
+ 
+Nand(a=a[3], b=nsel, out=pp3);
+Nand(a=b[3], b=sel, out=pd3);
+Nand(a=pp3, b=pd3, out=out[3]);
+ 
+Nand(a=a[4], b=nsel, out=pp4);
+Nand(a=b[4], b=sel, out=pd4);
+Nand(a=pp4, b=pd4, out=out[4]);
+ 
+Nand(a=a[5], b=nsel, out=pp5);
+Nand(a=b[5], b=sel, out=pd5);
+Nand(a=pp5, b=pd5, out=out[5]);
+ 
+Nand(a=a[6], b=nsel, out=pp6);
+Nand(a=b[6], b=sel, out=pd6);
+Nand(a=pp6, b=pd6, out=out[6]);
+ 
+Nand(a=a[7], b=nsel, out=pp7);
+Nand(a=b[7], b=sel, out=pd7);
+Nand(a=pp7, b=pd7, out=out[7]);
+ 
+Nand(a=a[8], b=nsel, out=pp8);
+Nand(a=b[8], b=sel, out=pd8);
+Nand(a=pp8, b=pd8, out=out[8]);
+ 
+Nand(a=a[9], b=nsel, out=pp9);
+Nand(a=b[9], b=sel, out=pd9);
+Nand(a=pp9, b=pd9, out=out[9]);
+ 
+Nand(a=a[10], b=nsel, out=pp10);
+Nand(a=b[10], b=sel, out=pd10);
+Nand(a=pp10, b=pd10, out=out[10]);
+ 
+Nand(a=a[11], b=nsel, out=pp11);
+Nand(a=b[11], b=sel, out=pd11);
+Nand(a=pp11, b=pd11, out=out[11]);
+ 
+Nand(a=a[12], b=nsel, out=pp12);
+Nand(a=b[12], b=sel, out=pd12);
+Nand(a=pp12, b=pd12, out=out[12]);
+ 
+Nand(a=a[13], b=nsel, out=pp13);
+Nand(a=b[13], b=sel, out=pd13);
+Nand(a=pp13, b=pd13, out=out[13]);
+ 
+Nand(a=a[14], b=nsel, out=pp14);
+Nand(a=b[14], b=sel, out=pd14);
+Nand(a=pp14, b=pd14, out=out[14]);
+ 
+Nand(a=a[15], b=nsel, out=pp15);
+Nand(a=b[15], b=sel, out=pd15);
+Nand(a=pp15, b=pd15, out=out[15]);
+}
